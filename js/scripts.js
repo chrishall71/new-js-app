@@ -1,19 +1,5 @@
-var myName = 'Chris Hall';
-document.write (myName);
+alert('Hello World!');
 
-myName = 'Cool Dude';
-document.write(myName);
-
-var simpleAddition = 2 + 2;
-document.write (simpleAddition);
-
-var size = 100;
-var doubleSize = size * 2;
-document.write (doubleSize);
-
-var size = 100;
-var doubleSize = size * 2;
-var minSize = (doubleSize * 2) - (size / 2);
-document.write (minSize);
-
+var favoriteFood = 'Blaze Pizza';
+document.write (favoriteFood);
 
