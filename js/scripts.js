@@ -1,7 +1,7 @@
 var repository = [
 	{
 		name: 'Bulbasaur', 
-		height: ,
+		height: 2.4,
 		types: ['grass', 'poison']
 	},
 	{
