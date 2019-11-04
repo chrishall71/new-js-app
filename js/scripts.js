@@ -13,5 +13,5 @@ var repository = [
 		name: 'Charizard', 
 		height: 5.7,
 		types: ['fire', 'flying']
-	}
+	},
 ];
