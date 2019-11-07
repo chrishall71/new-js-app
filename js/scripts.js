@@ -25,6 +25,6 @@ if (repository[i].height > 5) {
  
  document.write ('<h3> Pokemon Names</h3>');
 
- Object.keys(repository).forEach(function(property) {
-	document.write(repository[property].name + '<br>' + ' Height: ' + repository[property].height + '<br>' + ' Type: ' + repository[property].types + '<br><br>');
+ repository.forEach(function(property) {
+	document.write(property.name + '<br>' + ' Height: ' + property.height + '<br>' + ' Type: ' + property.types + '<br><br>');
  });
