@@ -17,28 +17,36 @@ var pokemonRepository = (function () { //wrapped repository Array inside IIFE
 		},
 	];
 	function add (pokemon) {
-		repository.push (pokemon)
+		repository.push (pokemon);
 	}
-
+//function to pull all Pokemon data
 	function getall() {
 		return repository;
 	}
 
-	return {
-		add: add,
-		getall: getall
+/*function addListItem(pokemon){
+	var listItem = document.createElement('li');
+	var button = document.createElement('button');
+	$pokemonList.appendChild(listItem);
+	button.innerText = pokemon.name;
+	button.classList.add('new-style')
+	listItem.appendChild(button);
+ }*/
+
+return {
+	add: add,
+	getAll: getAll,
+	addlistItem: addlistItem
 	};
 })();
 
-/*for (var i = 0; i < repository.length; i++) {
-	document.write ('<br>' + repository[i].name, ':'+'&nbsp &nbsp ' + ' Height:  ', repository[i].height);
-if (repository[i].height > 5) {
-	document.write ( ' -  Wow, that is Big! ');
-	}
- }*/
- 
- document.write ('<h3> Pokemon Names</h3>');
+var $pokemonList = document.querySelector('ul');
 
-pokemonRepository.getall ().forEach(function(property) {
-	document.write(property.name + '<br>' + ' Height: ' + property.height + '<br>' + ' Type: ' + property.types + '<br><br>');
+pokemonRepository.getall ().forEach(function(pokemon){
+		var listItem = document.createElement ('li')
+		var button = document.createElement('button');
+		button.innerText = pokemon.name;
+		button.classList.add('new-style');
+		listItem.appendChild(button);
+		$pokemonList.appendChild(listItem);
  });
