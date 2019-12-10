@@ -26,14 +26,20 @@ h1 {
 	overflow: auto;
 }
 
-.new-style {
-	background-color: lightgray;
-	border: none;
-	color: #535252;
-	padding: 10px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 15px;
+ul {
+	list-style-type: none;
+}
 
+.button-style {
+	background-color: #6ec4d3;
+	border: none;
+	margin: 5px;
+	color: #202020;
+	padding: 1px;
+	text-align: center;
+	display: inline-block;
+	font-size: 20px;
+	border-radius: 4px ;
+	width: 250px;
+	
 }

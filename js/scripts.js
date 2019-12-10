@@ -16,6 +16,7 @@ var pokemonRepository = (function () { //wrapped repository Array inside IIFE
 			types: ['fire', 'flying']
 		},
 	];
+	
 	function add (pokemon) {
 		repository.push (pokemon);
 	}
@@ -24,29 +25,35 @@ var pokemonRepository = (function () { //wrapped repository Array inside IIFE
 		return repository;
 	}
 
-/*function addListItem(pokemon){
-	var listItem = document.createElement('li');
-	var button = document.createElement('button');
-	$pokemonList.appendChild(listItem);
-	button.innerText = pokemon.name;
-	button.classList.add('new-style')
-	listItem.appendChild(button);
- }*/
+	function addListItem (pokemon) {
+		var $pokemonList = document.querySelector('.pokemon-list');
 
-return {
-	add: add,
-	getAll: getAll,
-	addlistItem: addlistItem
+		
+		var $listItem = document.createElement ('li'); //create a li element that contains a button for each Pokemon
+		var $listButton = document.createElement('button');  //creates the button element
+		$listButton.innerText = pokemon.name; //set the innerText of the burtton to be the pokemons name
+		$listButton.classList.add('button-style'); //Add a class tot he button using the classList.add method
+		
+		$listItem.appendChild($listButton);	//append the button to the list item as its child.
+		$pokemonList.appendChild($listItem); //append the child in the repository
+		$listButton.addEventListener('click', function(event) {
+			showDetails(pokemon); //creatning the button as function/event to be able to click in the future
+		});
+	}
+		function showDetails(pokemon) {
+			console.log (pokemon);
+		}
+
+	return {
+		add: add,
+		getall: getall,
+		addListItem: addListItem
 	};
 })();
 
-var $pokemonList = document.querySelector('ul');
+pokemonRepository.getall().forEach(function(pokemon){
+	//document.write(pokemon.name + '<br>' + ' Height: ' + pokemon.height + ' Type: ' + pokemon.types + '<br>');
 
-pokemonRepository.getall ().forEach(function(pokemon){
-		var listItem = document.createElement ('li')
-		var button = document.createElement('button');
-		button.innerText = pokemon.name;
-		button.classList.add('new-style');
-		listItem.appendChild(button);
-		$pokemonList.appendChild(listItem);
+	pokemonRepository.addListItem(pokemon);
+	var $listButton = document.querySelector(`.${pokemon.name}`);	
  });
