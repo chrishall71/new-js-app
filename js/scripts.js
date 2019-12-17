@@ -58,7 +58,7 @@ var pokemonRepository = (function () {
 		  item.imageUrl = details.sprites.front_default;
 		  item.height = details.height;
 		  //item.types = Object.keys(details.types);
-		  if (details.types.length == 2 ) {
+		  if (details.types.length === 2 ) {
 					item.types = [details.types[0].type.name, details.types[1].type.name];
 				} else {
 					item.types = [details.types[0].type.name];
@@ -116,17 +116,13 @@ var pokemonRepository = (function () {
 	function hideModal() {
 		$modalContainer.classList.remove('is-visible');
 	}
-// Function to close the modal
-function hideModal() {
-   $modalContainer.classList.remove('is-visible');
- }
 
 // Press escape key to close modal
  window.addEventListener('keydown', (e) => {
    if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
        hideModal();
      }
-   })
+   });
 
 // Click outside of the modal to close the modal
 $modalContainer.addEventListener('click', (e) => {
@@ -147,7 +143,6 @@ $modalContainer.addEventListener('click', (e) => {
 		loadList: loadList,
 		loadDetails: loadDetails,
 		showDetails: showDetails,
-		loadList: loadList,
 		showModal: showModal,
 	};
 })();
